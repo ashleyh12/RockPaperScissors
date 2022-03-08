@@ -2,7 +2,6 @@
 #include <string>
 #include <stdlib.h> //using this for the random library
 #include <time.h> //using this for the random library
-#include <unistd.h> //using this to pause the program for 5 seconds in between games/rounds
 using namespace std;
 
 
@@ -13,9 +12,7 @@ void play(string userChoice, string computerChoice)
   int computerPoints = 0;
   int tie = 0;
   string userDecision = "yes";
-  const string choices[3] = {"Rock", "Paper", "Scissors"};
-  srand ( time(NULL) ); //initialize the random seed
-
+  string choices[3] = {"Rock", "Paper", "Scissors"}; //array to store the options the computer can choose
   while (userDecision == "yes")
   {  
     
@@ -77,9 +74,9 @@ void play(string userChoice, string computerChoice)
     
     cout << endl << "Would you like to keep going? (yes/no) " << endl;
     cin >> userDecision;
+    cout << endl << "⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯" << endl; //to make the program look nice
     if (userDecision == "yes")
     {
-      sleep(2); // pausing in between rounds
       continue;
     }
 
@@ -121,6 +118,7 @@ int main()
   if (userChoice == "yes" || userChoice == "no") //to make sure the user enters the right response
   {    
     intro(userChoice, computerChoice);
+
   }
   else
   {    
